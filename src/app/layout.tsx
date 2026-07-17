@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { ThemeProvider } from "@/context/ThemeContext";
+import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 import "./globals.css";
 
@@ -107,6 +108,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${playfair.variable} antialiased`}>
         <ThemeProvider>{children}</ThemeProvider>
+        <Analytics />
         <Script src="/console-message.js" strategy="afterInteractive" />
       </body>
     </html>
