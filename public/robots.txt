@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://onecard-landing.vercel.app/sitemap.xml
+Sitemap: https://onecard-system-six.vercel.app/sitemap.xml

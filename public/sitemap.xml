@@ -2,54 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main Landing Page -->
   <url>
-    <loc>https://onecard-landing.vercel.app/</loc>
-    <lastmod>2026-07-17</lastmod>
+    <loc>https://onecard-system-six.vercel.app/</loc>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- Landing Page Sections (hash routes) -->
+
+  <!-- Landing Page Sections -->
   <url>
-    <loc>https://onecard-landing.vercel.app/#features</loc>
-    <lastmod>2026-07-17</lastmod>
+    <loc>https://onecard-system-six.vercel.app/#features</loc>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://onecard-landing.vercel.app/#how-it-works</loc>
-    <lastmod>2026-07-17</lastmod>
+    <loc>https://onecard-system-six.vercel.app/#stats</loc>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://onecard-landing.vercel.app/#stats</loc>
-    <lastmod>2026-07-17</lastmod>
+    <loc>https://onecard-system-six.vercel.app/#testimonials</loc>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://onecard-landing.vercel.app/#faq</loc>
-    <lastmod>2026-07-17</lastmod>
+    <loc>https://onecard-system-six.vercel.app/#how-it-works</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://onecard-system-six.vercel.app/#roles</loc>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://onecard-landing.vercel.app/#contact</loc>
-    <lastmod>2026-07-17</lastmod>
+    <loc>https://onecard-system-six.vercel.app/#faq</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://onecard-system-six.vercel.app/#contact</loc>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Legal Pages -->
   <url>
-    <loc>https://onecard-landing.vercel.app/terms</loc>
-    <lastmod>2026-07-17</lastmod>
+    <loc>https://onecard-system-six.vercel.app/terms</loc>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://onecard-landing.vercel.app/privacy</loc>
-    <lastmod>2026-07-17</lastmod>
+    <loc>https://onecard-system-six.vercel.app/privacy</loc>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 
   // Canonical URL
   alternates: {
-    canonical: "https://onecard-landing.vercel.app",
+    canonical: "https://onecard-system-six.vercel.app",
   },
 
   // Favicon
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_UG",
-    url: "https://onecard-landing.vercel.app",
+    url: "https://onecard-system-six.vercel.app",
     siteName: "OneCard — Jinja SSS",
     title: "OneCard — Jinja SSS | Smart Student Management System",
     description:
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
   // App Links
   appLinks: {
     web: {
-      url: "https://onecard-landing.vercel.app",
+      url: "https://onecard-system-six.vercel.app",
     },
   },
 };
