@@ -45,10 +45,11 @@ export const metadata: Metadata = {
     canonical: "https://onecard-system-six.vercel.app",
   },
 
-  // Favicon — Updated with your custom logo
+  // Favicon
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
+      { url: "/images/favicon.svg", type: "image/svg+xml" },
       { url: "/logo.png", type: "image/png" },
     ],
     apple: [
@@ -113,6 +114,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+      </head>
       <body className={`${inter.variable} ${playfair.variable} antialiased`}>
         <ThemeProvider>{children}</ThemeProvider>
         <Analytics />
