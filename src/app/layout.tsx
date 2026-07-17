@@ -45,9 +45,16 @@ export const metadata: Metadata = {
     canonical: "https://onecard-system-six.vercel.app",
   },
 
-  // Favicon
+  // Favicon — Updated with your custom logo
   icons: {
-    icon: "/favicon.svg",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/logo.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/logo.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
   },
 
   // Open Graph (Facebook, WhatsApp, LinkedIn)
