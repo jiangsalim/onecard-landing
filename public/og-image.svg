@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0A1F3F"/>
+  <rect x="40" y="40" width="1120" height="550" rx="20" fill="none" stroke="#00C2BA" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Hexagon Logo -->
+  <polygon points="200,50 260,82 260,148 200,180 140,148 140,82" fill="none" stroke="#00C2BA" stroke-width="4"/>
+  <line x1="185" y1="85" x2="185" y2="145" stroke="white" stroke-width="5" stroke-linecap="round"/>
+  <line x1="215" y1="85" x2="215" y2="145" stroke="white" stroke-width="5" stroke-linecap="round"/>
+  <line x1="185" y1="115" x2="215" y2="115" stroke="#00C2BA" stroke-width="5" stroke-linecap="round"/>
+  
+  <!-- Title -->
+  <text x="300" y="120" font-family="Georgia, serif" font-size="64" fill="white" font-weight="bold">OneCard</text>
+  <text x="300" y="170" font-family="Arial, sans-serif" font-size="28" fill="#00C2BA">Smarter School Management</text>
+  
+  <!-- Tagline -->
+  <text x="60" y="360" font-family="Arial, sans-serif" font-size="36" fill="white" font-weight="bold">One permanent card. Instant fee checks.</text>
+  <text x="60" y="410" font-family="Arial, sans-serif" font-size="36" fill="white" font-weight="bold">Automated attendance. Total control.</text>
+  
+  <!-- Stats -->
+  <rect x="60" y="470" width="320" height="100" rx="12" fill="#00C2BA" opacity="0.15"/>
+  <text x="100" y="510" font-family="Arial, sans-serif" font-size="42" fill="#00C2BA" font-weight="bold">29,560+</text>
+  <text x="100" y="545" font-family="Arial, sans-serif" font-size="18" fill="#9CA3AF">Students Managed</text>
+  
+  <rect x="420" y="470" width="200" height="100" rx="12" fill="#00C2BA" opacity="0.15"/>
+  <text x="460" y="510" font-family="Arial, sans-serif" font-size="42" fill="#00C2BA" font-weight="bold">2 sec</text>
+  <text x="460" y="545" font-family="Arial, sans-serif" font-size="18" fill="#9CA3AF">Fee Verification</text>
+  
+  <rect x="660" y="470" width="200" height="100" rx="12" fill="#00C2BA" opacity="0.15"/>
+  <text x="700" y="510" font-family="Arial, sans-serif" font-size="42" fill="#00C2BA" font-weight="bold">24/7</text>
+  <text x="700" y="545" font-family="Arial, sans-serif" font-size="18" fill="#9CA3AF">Cloud Access</text>
+  
+  <!-- Footer -->
+  <text x="60" y="605" font-family="Arial, sans-serif" font-size="16" fill="#6B7280">Jinja Senior Secondary School • P.O Box 255, Jinja</text>
+  
+  <!-- Bottom bar -->
+  <rect x="0" y="626" width="1200" height="4" fill="#00C2BA"/>
+</svg>

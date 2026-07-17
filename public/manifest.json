@@ -1,0 +1,20 @@
+{
+  "name": "OneCard — Jinja SSS",
+  "short_name": "OneCard",
+  "description": "Smart Student Management System for Jinja Senior Secondary School",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A1F3F",
+  "theme_color": "#00C2BA",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "lang": "en-US"
+}

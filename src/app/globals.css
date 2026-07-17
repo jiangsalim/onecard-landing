@@ -1,26 +1,401 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-navy: #0A1F3F;
+  --color-navy-dark: #06162E;
+  --color-navy-light: #132D52;
+  --color-teal: #00C2BA;
+  --color-teal-dark: #00A8A0;
+  --color-charcoal: #374151;
+  --color-gray-light: #F8F9FA;
+  --color-gray-medium: #9CA3AF;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  color: var(--color-charcoal);
+  background: white;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-playfair), ui-serif, Georgia, serif;
+}
+
+/* Custom utility classes */
+.font-heading {
+  font-family: var(--font-playfair), ui-serif, Georgia, serif;
+}
+
+.text-gray-medium {
+  color: var(--color-gray-medium);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #00C2BA, #0D9488);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-hero-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 31, 63, 0.4) 0%,
+    rgba(10, 31, 63, 0.6) 50%,
+    rgba(10, 31, 63, 0.9) 100%
+  );
+}
+
+.container-custom {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Button Styles */
+.btn-primary {
+  display: inline-block;
+  background-color: #00C2BA;
+  color: white;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 10px 25px rgba(0, 194, 186, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: #00A8A0;
+  box-shadow: 0 15px 35px rgba(0, 194, 186, 0.4);
+}
+
+.btn-outline-light {
+  display: inline-block;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-light:hover {
+  border-color: #00C2BA;
+  color: #00C2BA;
+}
+
+/* Pulse animation */
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+
+/* ========== DARK MODE ========== */
+
+/* Body */
+.dark body {
+  background-color: #0A1F3F;
+}
+
+/* Headings */
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4 {
+  color: #FFFFFF;
+}
+
+/* Text */
+.dark .text-navy {
+  color: #FFFFFF;
+}
+
+.dark .text-gray-600,
+.dark .text-gray-500 {
+  color: #9CA3AF;
+}
+
+/* Backgrounds */
+.dark .bg-white {
+  background-color: #0A1F3F;
+}
+
+.dark .bg-gray-light {
+  background-color: #06162E;
+}
+
+/* Borders */
+.dark .border-gray-100,
+.dark .border-gray-200 {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark .border-white\/10 {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Cards & hover states */
+.dark .hover\:bg-gray-50:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Navbar */
+.dark nav {
+  background-color: rgba(6, 22, 46, 0.95);
+}
+
+/* Footer */
+.dark .bg-navy-dark {
+  background-color: #020D1A;
+}
+
+/* FAQ accordion */
+.dark .border-gray-50 {
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Tech badges */
+.dark .hover\:shadow-md:hover {
+  box-shadow: 0 4px 12px rgba(0, 194, 186, 0.15);
+}
+
+/* Smooth scroll offset for fixed navbar */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 6rem;
+  }
+}
+
+/* ========== GOOGLE TRANSLATE ========== */
+
+/* Hide Google Translate default toolbar */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+.goog-te-gadget {
+  display: none !important;
+}
+
+/* Hide the Google Translate popup that appears on first load */
+.goog-te-balloon-frame {
+  display: none !important;
+}
+
+/* Prevent layout shift */
+.goog-text-highlight {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Smooth translation transition */
+.translated-rtl .goog-te-gadget,
+.translated-ltr .goog-te-gadget {
+  display: none !important;
+}
+
+/* ========== DARK MODE POLISH ========== */
+
+.dark {
+  color-scheme: dark;
+}
+
+/* Body & Background */
+.dark body {
+  background-color: #0A1F3F;
+  color: #E5E7EB;
+}
+
+.dark .bg-white {
+  background-color: #0A1F3F;
+}
+
+.dark .bg-gray-light {
+  background-color: #06162E;
+}
+
+/* Navy sections in dark mode */
+.dark .bg-navy {
+  background-color: #06162E;
+}
+
+.dark .bg-navy-dark {
+  background-color: #020D1A;
+}
+
+.dark .bg-navy-light {
+  background-color: #132D52;
+}
+
+/* Text colors */
+.dark .text-navy {
+  color: #FFFFFF;
+}
+
+.dark .text-gray-600 {
+  color: #D1D5DB;
+}
+
+.dark .text-gray-500 {
+  color: #9CA3AF;
+}
+
+.dark .text-gray-400 {
+  color: #9CA3AF;
+}
+
+.dark .text-charcoal {
+  color: #E5E7EB;
+}
+
+/* Borders */
+.dark .border-gray-100,
+.dark .border-gray-200 {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark .border-white\/10 {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark .border-white\/20 {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.dark .border-navy\/10 {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Cards */
+.dark .hover\:shadow-lg:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Navbar */
+.dark nav.bg-navy\/95 {
+  background-color: rgba(6, 22, 46, 0.95);
+}
+
+/* Hero overlay */
+.dark .bg-hero-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgba(6, 22, 46, 0.4) 0%,
+    rgba(6, 22, 46, 0.7) 50%,
+    rgba(6, 22, 46, 0.95) 100%
+  );
+}
+
+/* Tech badges */
+.dark .hover\:shadow-md:hover {
+  box-shadow: 0 4px 20px rgba(0, 194, 186, 0.2);
+}
+
+/* FAQ */
+.dark .border-gray-50 {
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark .hover\:bg-gray-50:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Forms */
+.dark input,
+.dark textarea {
+  color-scheme: dark;
+}
+
+.dark .bg-navy-light\/50 {
+  background-color: rgba(19, 45, 82, 0.5);
+}
+
+/* Scrollbar */
+.dark ::-webkit-scrollbar {
+  width: 10px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #06162E;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #132D52;
+  border-radius: 5px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #00C2BA;
+}
+
+/* Selection */
+.dark ::selection {
+  background-color: rgba(0, 194, 186, 0.3);
+  color: white;
+}
+
+/* Focus rings */
+.dark *:focus-visible {
+  outline: 2px solid #00C2BA;
+  outline-offset: 2px;
+}
+
+/* Transitions */
+.dark * {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Gradient text in dark mode */
+.dark .text-gradient {
+  background: linear-gradient(135deg, #00C2BA, #0D9488);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Live Counter dark mode */
+.dark .bg-teal {
+  background-color: #00A8A0;
+}
+
+/* Loading screen */
+.dark .bg-navy {
+  background-color: #06162E;
 }

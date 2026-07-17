@@ -1,0 +1,6 @@
+# OneCard Landing Page - Jinja SSS
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://onecard-landing.vercel.app/sitemap.xml
