@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -20,30 +20,25 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
-  // Close mobile menu when clicking a link
-  const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
+  const scrollToSection = (href: string) => {
     setMobileOpen(false);
     
-    const element = document.querySelector(href);
-    if (element) {
-      const offset = 80; // Account for fixed navbar
-      const top = element.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: "smooth" });
+    if (href === "#") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
     }
-  }, []);
 
-  // Close mobile menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (mobileOpen && !target.closest("nav")) {
-        setMobileOpen(false);
+    // Small delay to let menu close animation start
+    setTimeout(() => {
+      const id = href.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        const navbarHeight = 80;
+        const top = element.getBoundingClientRect().top + window.scrollY - navbarHeight;
+        window.scrollTo({ top, behavior: "smooth" });
       }
-    };
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, [mobileOpen]);
+    }, 100);
+  };
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -61,7 +56,6 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      // Find active section
       const sections = navLinks.map((link) => link.href.replace("#", ""));
       let current = "";
       for (const section of sections) {
@@ -94,9 +88,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a 
-            href="#" 
-            onClick={(e) => handleNavClick(e, "#")}
+          <button
+            onClick={() => scrollToSection("#")}
             className="flex items-center gap-2 flex-shrink-0"
           >
             <div className="w-8 h-8 bg-teal rounded-lg flex items-center justify-center font-bold text-navy text-sm">
@@ -105,7 +98,7 @@ export default function Navbar() {
             <span className="text-white font-serif font-bold text-xl">
               OneCard
             </span>
-          </a>
+          </button>
 
           {/* Desktop Links */}
           <div className="hidden lg:flex items-center gap-4">
@@ -113,10 +106,9 @@ export default function Navbar() {
               const sectionId = link.href.replace("#", "");
               const isActive = activeSection === sectionId;
               return (
-                <a
+                <button
                   key={link.name}
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
+                  onClick={() => scrollToSection(link.href)}
                   className={`transition-colors duration-200 text-sm font-medium relative whitespace-nowrap ${
                     isActive
                       ? "text-teal"
@@ -131,7 +123,7 @@ export default function Navbar() {
                       transition={{ type: "spring", stiffness: 500, damping: 30 }}
                     />
                   )}
-                </a>
+                </button>
               );
             })}
             <LanguageSwitcher />
@@ -152,7 +144,7 @@ export default function Navbar() {
             <ThemeToggle />
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="text-white p-2 z-50 relative"
+              className="text-white p-2"
               aria-label="Toggle menu"
             >
               <div className="w-6 flex flex-col gap-1.5">
@@ -181,30 +173,28 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden bg-navy border-t border-navy-light overflow-y-auto"
-            style={{ maxHeight: "calc(100vh - 64px)" }}
+            transition={{ duration: 0.2 }}
+            className="lg:hidden bg-navy border-t border-navy-light"
           >
-            <div className="px-4 py-6 space-y-2">
+            <nav className="px-4 py-4 space-y-1">
               {navLinks.map((link) => {
                 const sectionId = link.href.replace("#", "");
                 const isActive = activeSection === sectionId;
                 return (
-                  <a
+                  <button
                     key={link.name}
-                    href={link.href}
-                    onClick={(e) => handleNavClick(e, link.href)}
-                    className={`block py-3 px-4 rounded-lg transition-all duration-200 text-base font-medium ${
+                    onClick={() => scrollToSection(link.href)}
+                    className={`w-full text-left block py-3 px-4 rounded-lg transition-all duration-200 text-base font-medium ${
                       isActive
                         ? "text-teal bg-teal/10"
-                        : "text-gray-300 hover:text-teal hover:bg-teal/5 active:bg-teal/10"
+                        : "text-gray-300 active:bg-teal/10 active:text-teal"
                     }`}
                   >
                     {link.name}
-                  </a>
+                  </button>
                 );
               })}
-              <div className="pt-3">
+              <div className="pt-2">
                 <a
                   href="https://onecard-jinja-sss.onrender.com/login/"
                   target="_blank"
@@ -214,7 +204,7 @@ export default function Navbar() {
                   Login to OneCard
                 </a>
               </div>
-            </div>
+            </nav>
           </motion.div>
         )}
       </AnimatePresence>
