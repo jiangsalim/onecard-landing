@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -19,6 +19,43 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+
+  // Close mobile menu when clicking a link
+  const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setMobileOpen(false);
+    
+    const element = document.querySelector(href);
+    if (element) {
+      const offset = 80; // Account for fixed navbar
+      const top = element.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+  }, []);
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (mobileOpen && !target.closest("nav")) {
+        setMobileOpen(false);
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [mobileOpen]);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,7 +94,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 flex-shrink-0">
+          <a 
+            href="#" 
+            onClick={(e) => handleNavClick(e, "#")}
+            className="flex items-center gap-2 flex-shrink-0"
+          >
             <div className="w-8 h-8 bg-teal rounded-lg flex items-center justify-center font-bold text-navy text-sm">
               OC
             </div>
@@ -75,6 +116,7 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className={`transition-colors duration-200 text-sm font-medium relative whitespace-nowrap ${
                     isActive
                       ? "text-teal"
@@ -110,7 +152,7 @@ export default function Navbar() {
             <ThemeToggle />
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="text-white p-2"
+              className="text-white p-2 z-50 relative"
               aria-label="Toggle menu"
             >
               <div className="w-6 flex flex-col gap-1.5">
@@ -139,9 +181,11 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-navy border-t border-navy-light overflow-hidden"
+            transition={{ duration: 0.3 }}
+            className="lg:hidden bg-navy border-t border-navy-light overflow-y-auto"
+            style={{ maxHeight: "calc(100vh - 64px)" }}
           >
-            <div className="px-4 py-4 space-y-1">
+            <div className="px-4 py-6 space-y-2">
               {navLinks.map((link) => {
                 const sectionId = link.href.replace("#", "");
                 const isActive = activeSection === sectionId;
@@ -149,26 +193,27 @@ export default function Navbar() {
                   <a
                     key={link.name}
                     href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className={`block py-2.5 px-3 rounded-lg transition-colors duration-200 ${
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    className={`block py-3 px-4 rounded-lg transition-all duration-200 text-base font-medium ${
                       isActive
                         ? "text-teal bg-teal/10"
-                        : "text-gray-300 hover:text-teal hover:bg-teal/5"
+                        : "text-gray-300 hover:text-teal hover:bg-teal/5 active:bg-teal/10"
                     }`}
                   >
                     {link.name}
                   </a>
                 );
               })}
-              <a
-                href="https://onecard-jinja-sss.onrender.com/login/"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMobileOpen(false)}
-                className="block text-center bg-teal hover:bg-teal-dark text-navy font-semibold px-6 py-3 rounded-lg transition-all duration-200 mt-3"
-              >
-                Login
-              </a>
+              <div className="pt-3">
+                <a
+                  href="https://onecard-jinja-sss.onrender.com/login/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center bg-teal hover:bg-teal-dark text-navy font-semibold px-6 py-3.5 rounded-lg transition-all duration-200 text-base"
+                >
+                  Login to OneCard
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
