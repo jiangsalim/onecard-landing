@@ -399,3 +399,25 @@ body {
 .dark .bg-navy {
   background-color: #06162E;
 }
+
+/* Google Translate fixes */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+  color: #374151;
+}
+
+/* Hide Google top bar */
+.skiptranslate > iframe {
+  display: none !important;
+}

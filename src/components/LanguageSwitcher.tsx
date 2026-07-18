@@ -3,6 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+declare global {
+  interface Window {
+    google: any;
+    googleTranslateElementInit: () => void;
+  }
+}
+
 const languages = [
   { code: "en", name: "English", flag: "🇬🇧" },
   { code: "lg", name: "Luganda", flag: "🇺🇬" },
@@ -13,6 +20,7 @@ const languages = [
 export default function LanguageSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState("en");
+  const [isLoaded, setIsLoaded] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const initialized = useRef(false);
 
@@ -21,27 +29,34 @@ export default function LanguageSwitcher() {
     if (initialized.current) return;
     initialized.current = true;
 
-    // Add Google Translate script
-    const script = document.createElement("script");
-    script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-    script.async = true;
-    document.body.appendChild(script);
+    const initTranslate = () => {
+      const script = document.createElement("script");
+      script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+      script.async = true;
+      script.onload = () => setIsLoaded(true);
+      document.body.appendChild(script);
 
-    // Define the callback
-    (window as any).googleTranslateElementInit = () => {
-      new (window as any).google.translate.TranslateElement(
-        {
-          pageLanguage: "en",
-          includedLanguages: "en,lg,sw,fr",
-          layout: (window as any).google.translate.TranslateElement.InlineLayout.SIMPLE,
-          autoDisplay: false,
-        },
-        "google_translate_element"
-      );
+      window.googleTranslateElementInit = () => {
+        new window.google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            includedLanguages: "en,lg,sw,fr",
+            layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false,
+            multilanguagePage: true,
+          },
+          "google_translate_element"
+        );
+      };
     };
 
+    // Small delay to ensure DOM is ready
+    setTimeout(initTranslate, 500);
+
     return () => {
-      document.body.removeChild(script);
+      // Cleanup
+      const element = document.getElementById("google_translate_element");
+      if (element) element.innerHTML = "";
     };
   }, []);
 
@@ -60,11 +75,31 @@ export default function LanguageSwitcher() {
     setCurrentLang(code);
     setIsOpen(false);
 
-    // Trigger Google Translate
+    if (code === "en") {
+      // Reset to original English
+      const cookies = document.cookie.split(";");
+      cookies.forEach((cookie) => {
+        const [name] = cookie.trim().split("=");
+        if (name === "googtrans") {
+          document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+      });
+      // Reload to reset translation
+      window.location.reload();
+      return;
+    }
+
+    // Set the language cookie
+    document.cookie = `googtrans=/en/${code}; path=/`;
+
+    // Trigger Google Translate change
     const select = document.querySelector<HTMLSelectElement>(".goog-te-combo");
     if (select) {
       select.value = code;
       select.dispatchEvent(new Event("change"));
+    } else {
+      // If select isn't ready yet, reload with cookie
+      window.location.reload();
     }
   };
 
@@ -93,7 +128,7 @@ export default function LanguageSwitcher() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute right-0 top-full mt-2 w-44 bg-white dark:bg-navy-light border border-gray-200 dark:border-navy-light rounded-xl shadow-xl overflow-hidden z-50"
+            className="absolute right-0 top-full mt-2 w-44 bg-white dark:bg-navy-light border border-gray-200 dark:border-navy-light rounded-xl shadow-xl overflow-hidden z-[100]"
           >
             <div className="py-1">
               {languages.map((lang) => (
