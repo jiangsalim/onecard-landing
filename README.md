@@ -1,64 +1,152 @@
+Here's the comprehensive README for OneCard Landing — following the same professional structure:
+
 ```markdown
 # 🎫 OneCard — Jinja SSS Landing Page
 
-<div align="center">
+<p align="center">
+  <img src="https://onecard-system-six.vercel.app/favicon.ico" alt="OneCard Logo" width="80" height="80" />
+</p>
 
-![OneCard Logo](public/favicon.svg)
+<h1 align="center">OneCard</h1>
 
-**Smart Student Management System for Jinja Senior Secondary School**
+<p align="center">
+  <em>One Card. Entire School Life.</em>
+</p>
 
-[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss)](https://tailwindcss.com/)
-[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-0055FF?logo=framer)](https://www.framer.com/motion/)
-[![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-black?logo=vercel)](https://vercel.com)
+<p align="center">
+  A modern landing page for the smart student management system powering <strong>29,560+ students</strong> at Jinja Senior Secondary School, Uganda.
+</p>
 
-[![Live Site](https://img.shields.io/badge/Live-onecard--system--six.vercel.app-00C2BA?style=flat-square)](https://onecard-system-six.vercel.app/)
-[![System](https://img.shields.io/badge/OneCard_System-Login-0A1F3F?style=flat-square)](https://onecard-jinja-sss.onrender.com/login/)
+<p align="center">
+  <a href="https://onecard-system-six.vercel.app">🌐 Landing Page</a> •
+  <a href="https://onecard-jinja-sss.onrender.com/login/">⚙️ Live System</a> •
+  <a href="#-features">✨ Features</a> •
+  <a href="#-installation">📥 Installation</a> •
+  <a href="#-support">📧 Support</a>
+</p>
 
-</div>
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-16-black?logo=next.js" alt="Next.js" />
+  <img src="https://img.shields.io/badge/TypeScript-5-blue?logo=typescript" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Framer_Motion-12-0055FF?logo=framer" alt="Framer Motion" />
+  <img src="https://img.shields.io/badge/Deployed_on-Vercel-black?logo=vercel" alt="Vercel" />
+</p>
 
 ---
 
-## 📋 Overview
+## 📖 About OneCard
 
-Landing page for **OneCard** — an all-in-one smart student card and school management system that serves **29,560+ students** at Jinja Senior Secondary School in Uganda.
+OneCard is an all-in-one smart student card and school management system that replaces paper ID cards with permanent PVC cards featuring unique QR codes.
 
-**Landing Page:** [onecard-system-six.vercel.app](https://onecard-system-six.vercel.app/)  
-**Live System:** [onecard-jinja-sss.onrender.com](https://onecard-jinja-sss.onrender.com/login/)
+Staff scan a QR code to instantly check fees, mark attendance, track student movement, and control meal access — all from any device, anywhere.
+
+This repository contains the **landing page** that showcases the system and drives users to the live OneCard platform.
+
+Built with love in Uganda 🇺🇬 for Jinja Senior Secondary School.
 
 ---
 
 ## ✨ Features
 
-- 🎯 **Hero Section** with parallax image & count-up statistics
-- 📊 **Stats Section** with animated counters that reset on scroll
-- 💬 **Staff Testimonials** for social proof
-- 🎥 **Demo Video Section** (ready for embed)
-- 🔄 **How It Works** — 4-step guide
-- 👥 **User Roles** — 5 staff roles + parent portal
-- ⚡ **Performance Metrics** showcase
-- 🛠️ **Tech Badges** with custom SVG icons
-- ❓ **FAQ Accordion** with smooth animations
-- 📧 **Contact Form** with Brevo email integration
-- 🌓 **Dark/Light Mode** with system preference detection
-- 🌍 **Google Translate** — English, Luganda, Kiswahili, French
-- 🍪 **Cookie Consent Banner** with localStorage
-- 🔝 **Back to Top Button**
-- 🟢 **Live Status Badge** — pings the real system every 60s
-- 🖥️ **Developer Console Easter Egg**
-- 📱 **PWA Support** — installable on mobile devices
-- 📄 **Terms of Service** & **Privacy Policy** pages
-- 🔍 **Full SEO** — Open Graph, Twitter Cards, sitemap, robots.txt
-- ♿ **WCAG AA Accessible** — keyboard navigation, ARIA labels, contrast
-- 🚫 **Custom 404 Page**
+### 🎨 Landing Page
+- **Hero Section** — parallax image with animated count-up statistics
+- **Impact Stats** — numbers recount every time you scroll back into view
+- **Staff Testimonials** — real voices from Jinja SSS
+- **How It Works** — 4-step visual guide
+- **User Roles** — 5 staff roles + parent portal explained
+- **Performance Metrics** — speed, accessibility, and security badges
+- **Tech Stack Showcase** — Django, MySQL, Cloud, Offline-ready
+- **FAQ Accordion** — smooth expand/collapse animations
+
+### 📧 Working Contact Form
+- Powered by **Brevo** (Sendinblue) REST API
+- Server-side validation
+- Styled HTML email template
+- Auto-reply sent directly to sender
+
+### 🌓 Dark/Light Mode
+- Auto-detects system preference
+- Persists choice in `localStorage`
+- Fully styled across every component
+
+### 🌍 Multi-Language Support
+- Google Translate integration
+- English, Luganda, Kiswahili, Français
+- Available in navbar and footer
+
+### 🍪 Privacy & Legal
+- Cookie consent banner
+- Terms of Service page
+- Privacy Policy page
+
+### 📱 Progressive Web App
+- Installable on Android, iOS, and Desktop
+- Custom app manifest
+- Offline-ready assets
+
+### 🔍 SEO & Analytics
+- Full Open Graph + Twitter Card metadata
+- `sitemap.xml` submitted to Google Search Console
+- `robots.txt` configured for indexing
+- Vercel Analytics integrated
+- Canonical URLs
+
+### ♿ Accessibility
+- WCAG AA compliant
+- Keyboard navigable
+- ARIA labels on interactive elements
+- High-contrast color system
+- Focus indicators
+
+### 🎁 Extra Polish
+- Animated loading splash screen
+- Back to Top button
+- Live system status badge (pings every 60s)
+- Developer console easter egg
+- "Powered by Herman Software" badge
+- Custom branded 404 page
 
 ---
 
-## 🚀 Tech Stack
+## 🚀 Getting Started
 
-| Category | Technology |
-|----------|------------|
+### 🌐 Use the Website
+
+Visit [onecard-system-six.vercel.app](https://onecard-system-six.vercel.app) — no installation needed!
+
+1. Browse the features and impact stats
+2. Explore the user roles and FAQ
+3. Contact us via the form
+4. Click **Login** to access the live OneCard system
+
+### 📱 Install as an App
+
+OneCard works as a Progressive Web App (PWA):
+
+**On Android:**
+1. Open the site in Chrome
+2. Tap the menu (⋮) → **Add to Home screen**
+3. Tap **Install**
+
+**On iPhone/iPad:**
+1. Open the site in Safari
+2. Tap **Share** → **Add to Home Screen**
+3. Tap **Add**
+
+**On Desktop:**
+1. Open the site in Chrome or Edge
+2. Click the install icon in the address bar
+3. Click **Install**
+
+---
+
+## 🛠️ Tech Stack
+
+OneCard is built with modern, fast technology:
+
+| Layer | Technology |
+|-------|------------|
 | **Framework** | Next.js 16 (App Router) |
 | **Language** | TypeScript |
 | **Styling** | Tailwind CSS 4 |
@@ -83,7 +171,6 @@ Landing page for **OneCard** — an all-in-one smart student card and school man
 | Teal Dark | `#00A8A0` | Hover states |
 | White | `#FFFFFF` | Page backgrounds |
 | Gray Light | `#F8F9FA` | Section backgrounds |
-| Gray Medium | `#9CA3AF` | Secondary text |
 | Charcoal | `#374151` | Body text |
 
 ---
@@ -94,57 +181,62 @@ Landing page for **OneCard** — an all-in-one smart student card and school man
 
 onecard-landing/
 ├── public/
-│   ├── favicon.ico              # Custom hexagon favicon
-│   ├── favicon.svg              # SVG fallback favicon
-│   ├── og-image.svg             # Social sharing preview
-│   ├── manifest.json            # PWA manifest
-│   ├── robots.txt               # SEO robots config
-│   ├── sitemap.xml              # Site index for search engines
-│   ├── console-message.js       # Developer console easter egg
-│   ├── googlee083547305f9a958.html  # Google Search Console verification
+│   ├── favicon.ico                    # Custom hexagon favicon
+│   ├── favicon.svg                    # SVG fallback
+│   ├── og-image.svg                   # Social sharing preview
+│   ├── manifest.json                  # PWA manifest
+│   ├── robots.txt                     # SEO robots config
+│   ├── sitemap.xml                    # Site index for search engines
+│   ├── console-message.js             # Developer console easter egg
+│   ├── googlee083547305f9a958.html    # Google Search Console verification
 │   └── images/
-│       └── onecard-hero.jpg     # Hero background image
+│       └── onecard-hero.jpg           # Hero background image
+│
 ├── src/
 │   ├── app/
-│   │   ├── layout.tsx           # Root layout (SEO, fonts, providers)
-│   │   ├── page.tsx             # Main landing page
-│   │   ├── not-found.tsx        # Custom 404 page
-│   │   ├── globals.css          # Global styles & dark mode
+│   │   ├── layout.tsx                 # Root layout (SEO, fonts, providers)
+│   │   ├── page.tsx                   # Main landing page
+│   │   ├── not-found.tsx              # Custom 404 page
+│   │   ├── globals.css                # Global styles & dark mode
 │   │   ├── api/
 │   │   │   └── contact/
-│   │   │       └── route.ts     # Contact form API endpoint
+│   │   │       └── route.ts           # Contact form API endpoint
 │   │   ├── terms/
-│   │   │   └── page.tsx         # Terms of Service
+│   │   │   └── page.tsx               # Terms of Service
 │   │   └── privacy/
-│   │       └── page.tsx         # Privacy Policy
+│   │       └── page.tsx               # Privacy Policy
+│   │
 │   ├── components/
-│   │   ├── Navbar.tsx           # Navigation with active link highlighting
-│   │   ├── Hero.tsx             # Hero with parallax & count-up
-│   │   ├── Features.tsx         # 6 feature cards
-│   │   ├── Stats.tsx            # Impact statistics
-│   │   ├── LiveCounter.tsx      # Live animated counters
-│   │   ├── Testimonials.tsx     # Staff testimonials
-│   │   ├── DemoVideo.tsx        # Video placeholder section
-│   │   ├── HowItWorks.tsx       # 4-step guide
-│   │   ├── UserRoles.tsx        # 5 user roles + parent card
-│   │   ├── PerformanceMetrics.tsx # Speed/security metrics
-│   │   ├── TechBadges.tsx       # Technology stack badges
-│   │   ├── FAQ.tsx              # Accordion FAQ
-│   │   ├── Contact.tsx          # Contact info + form
-│   │   ├── ContactForm.tsx      # Working email form
-│   │   ├── Footer.tsx           # Footer with links
-│   │   ├── ThemeToggle.tsx      # Dark/light mode switch
-│   │   ├── LanguageSwitcher.tsx # Google Translate dropdown
-│   │   ├── CookieBanner.tsx     # GDPR cookie consent
-│   │   ├── BackToTop.tsx        # Scroll-to-top button
-│   │   ├── LoadingScreen.tsx    # Animated splash screen
-│   │   ├── StatusBadge.tsx      # System online/offline indicator
-│   │   └── DeveloperBadge.tsx   # "Powered by Herman Software"
+│   │   ├── Navbar.tsx                 # Navigation with active link highlighting
+│   │   ├── Hero.tsx                   # Hero with parallax & count-up
+│   │   ├── Features.tsx               # 6 feature cards
+│   │   ├── Stats.tsx                  # Impact statistics
+│   │   ├── LiveCounter.tsx            # Live animated counters
+│   │   ├── Testimonials.tsx           # Staff testimonials
+│   │   ├── DemoVideo.tsx              # Video placeholder section
+│   │   ├── HowItWorks.tsx             # 4-step guide
+│   │   ├── UserRoles.tsx              # 5 user roles + parent card
+│   │   ├── PerformanceMetrics.tsx     # Speed/security metrics
+│   │   ├── TechBadges.tsx             # Technology stack badges
+│   │   ├── FAQ.tsx                    # Accordion FAQ
+│   │   ├── Contact.tsx                # Contact info + form
+│   │   ├── ContactForm.tsx            # Working email form
+│   │   ├── Footer.tsx                 # Footer with links
+│   │   ├── ThemeToggle.tsx            # Dark/light mode switch
+│   │   ├── LanguageSwitcher.tsx       # Google Translate dropdown
+│   │   ├── CookieBanner.tsx           # GDPR cookie consent
+│   │   ├── BackToTop.tsx              # Scroll-to-top button
+│   │   ├── LoadingScreen.tsx          # Animated splash screen
+│   │   ├── StatusBadge.tsx            # System online/offline indicator
+│   │   └── DeveloperBadge.tsx         # "Powered by Herman Software"
+│   │
 │   ├── context/
-│   │   └── ThemeContext.tsx      # Theme provider (dark/light)
+│   │   └── ThemeContext.tsx           # Theme provider (dark/light)
+│   │
 │   └── lib/
-│       └── brevo.ts             # Brevo email integration
-├── .env.local                   # Environment variables (API keys)
+│       └── brevo.ts                   # Brevo email integration
+│
+├── .env.local                         # Environment variables (gitignored)
 ├── .gitignore
 ├── package.json
 ├── tsconfig.json
@@ -154,59 +246,73 @@ onecard-landing/
 
 ---
 
-## 🛠️ Getting Started
+## 💻 Development Setup
+
+Want to run OneCard Landing locally? Here's how:
 
 ### Prerequisites
 
 - Node.js 18+
 - npm 9+
+- A Brevo account (for the contact form)
 
-### Installation
+### 1. Clone the repository
 
 ```bash
-# Clone the repository
 git clone https://github.com/jiangsalim/onecard-landing.git
 cd onecard-landing
+```
 
-# Install dependencies
+2. Install dependencies
+
+```bash
 npm install
+```
 
-# Create environment file
-cp .env.example .env.local
-# Add your Brevo API key to .env.local
+3. Set up environment variables
 
-# Start development server
+Create .env.local in the root:
+
+```env
+BREVO_API_KEY=your-brevo-api-key-here
+CONTACT_EMAIL=infohermansoftware@gmail.com
+```
+
+4. Start the development server
+
+```bash
 npm run dev
 ```
 
-Open http://localhost:3000 in your browser.
+5. Open in browser
+
+Visit http://localhost:3000
 
 ---
 
 📧 Contact Form Setup
 
-1. Create a free account at Brevo
-2. Generate an SMTP API key
-3. Add to .env.local:
+The contact form uses Brevo for email delivery.
+
+1. Create a free account at brevo.com
+2. Go to SMTP & API → API Keys
+3. Generate a new API key
+4. Add it to .env.local:
 
 ```env
-BREVO_API_KEY=your-api-key-here
+BREVO_API_KEY=xkeysib-...
 CONTACT_EMAIL=infohermansoftware@gmail.com
 ```
 
----
-
-🌍 Environment Variables
-
-Variable Description Required
-BREVO_API_KEY Brevo API key for email sending ✅ Yes
-CONTACT_EMAIL Destination email for contact form ✅ Yes
+Emails arrive with a branded HTML template and Reply-To set to the sender.
 
 ---
 
 🚀 Deployment
 
-This project is optimized for Vercel:
+This project is optimized for Vercel.
+
+Deploy with CLI
 
 ```bash
 # Install Vercel CLI
@@ -216,12 +322,23 @@ npm i -g vercel
 vercel
 ```
 
-Or connect your GitHub repo to Vercel for automatic deployments.
+Deploy via GitHub
 
-Environment Variables needed on Vercel:
+1. Push your repo to GitHub
+2. Go to vercel.com/new
+3. Import the repository
+4. Add environment variables:
+   · BREVO_API_KEY
+   · CONTACT_EMAIL
+5. Click Deploy
 
-· BREVO_API_KEY
-· CONTACT_EMAIL
+---
+
+🌍 Environment Variables
+
+Variable Description Required
+BREVO_API_KEY Brevo API key for sending emails ✅ Yes
+CONTACT_EMAIL Destination email for the contact form ✅ Yes
 
 ---
 
@@ -230,7 +347,7 @@ Environment Variables needed on Vercel:
 Metric Value
 Students Managed 29,560+
 Student Photos 250+
-Fee Verification 2 seconds
+Fee Verification Time 2 seconds
 Staff Roles 5
 Card Type PVC with QR Code
 Platform Web-based (Django + MySQL)
@@ -240,36 +357,53 @@ Uptime 24/7
 
 ---
 
-🔐 Security Notes
+🤝 Contributing
 
-· API keys are stored in environment variables, never in code
-· .env.local is gitignored
-· Google Search Console verification via HTML file
-· All contact form submissions validated server-side
-· WCAG AA accessible design
+We welcome contributions! Here's how to get started:
 
----
-
-📈 SEO & Analytics
-
-· ✅ Full Open Graph + Twitter Card metadata
-· ✅ sitemap.xml submitted to Google Search Console
-· ✅ robots.txt configured for indexing
-· ✅ Vercel Analytics integrated
-· ✅ Canonical URLs set
-· ✅ Structured data ready
+1. Fork the repository
+2. Create a branch for your feature (git checkout -b feature/amazing-feature)
+3. Commit your changes (git commit -m "Add amazing feature")
+4. Push to your branch (git push origin feature/amazing-feature)
+5. Open a Pull Request
 
 ---
 
-👨‍💻 Developer
+📜 Legal
 
-Herman Software Solutions
+Copyright Notice
 
-· 📧 Email: infohermansoftware@gmail.com
-· 📱 Phone: +256 772723188
-· 🌐 Website: herman-software-website.vercel.app
-· 💻 GitHub: github.com/jiangsalim
-· 📦 Repo: github.com/jiangsalim/onecard-landing
+All content on this landing page is the property of Herman Software Solutions and Jinja Senior Secondary School.
+
+Disclaimer
+
+This is a landing page for the OneCard system. It is not affiliated with any third-party services mentioned. All trademarks belong to their respective owners.
+
+---
+
+📧 Support
+
+Having issues? We're here to help!
+
+Channel Contact
+📧 Email jaingsalim@gmail.com
+📱 Phone 0772723188
+🌐 Website herman-software-website.vercel.app
+🐛 Bug Reports GitHub Issues
+
+---
+
+🙏 Acknowledgements
+
+OneCard Landing would not be possible without the incredible open-source community:
+
+· Next.js — React framework
+· Tailwind CSS — Utility-first styling
+· Framer Motion — Animation library
+· Brevo — Transactional email
+· Google Translate — Multi-language support
+· Vercel — Hosting and analytics
+· Heroicons — SVG icon inspiration
 
 ---
 
@@ -279,18 +413,52 @@ Herman Software Solutions
 
 ---
 
-🙏 Acknowledgments
+🗺️ Roadmap
 
-· Jinja Senior Secondary School — P.O Box 255, Jinja
-· Built with ❤️ in Uganda 🇺🇬
+✅ Completed
+
+· ☑ Hero with parallax and count-up stats
+· ☑ Animated stats sections
+· ☑ Staff testimonials
+· ☑ Working contact form (Brevo)
+· ☑ Dark/Light mode
+· ☑ Google Translate (4 languages)
+· ☑ Cookie consent banner
+· ☑ Terms & Privacy pages
+· ☑ PWA support
+· ☑ SEO (sitemap, robots, Open Graph)
+· ☑ WCAG AA accessibility
+· ☑ Custom 404 page
+· ☑ Live status badge
+· ☑ Developer console easter egg
+
+🚧 In Progress
+
+· ☐ Demo video embed
+· ☐ Multi-language Luganda (full translation)
+· ☐ Blog section
+· ☐ Testimonials CMS
+
+🔮 Future
+
+· ☐ Interactive live demo
+· ☐ Downloadable OneCard brochure (PDF)
+· ☐ Parent portal preview
+· ☐ School admin dashboard preview
+· ☐ Multi-school support page
 
 ---
 
-<div align="center">
+<p align="center">
+  <strong>Made with ❤️ in Uganda by HERMAN Software Solutions</strong>
+</p>
 
-"One Card. Entire School Life. Smarter School Management."
+<p align="center">
+  ⭐ If you find OneCard useful, please give it a star on GitHub!
+</p>
 
-🌐 Live Site • 🔐 System Login
+---
 
-</div>
+Last updated: September 2026
+
 ```
