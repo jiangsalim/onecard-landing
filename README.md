@@ -1,6 +1,3 @@
-Here's the comprehensive README for OneCard Landing — following the same professional structure:
-
-```markdown
 # 🎫 OneCard — Jinja SSS Landing Page
 
 <p align="center">
